@@ -1,0 +1,116 @@
+head 
+	meta(charset="UTF-8")
+	meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+
+
+	script(type='text/javascript', src='/public/js/jquery/jquery-2.0.3.min.js')
+	
+
+	script(type='text/javascript', src='/public/js/commmanager/commmanager.js')
+	script(type='text/javascript', src='/public/js/clientutil/clientutil.js')
+
+
+	script(type='text/javascript', src='/public/js/easyui/jquery.easyui.min.js')
+	//script(type='text/javascript', src='/public/js/easyui/hopper/easyui.extention.js')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/easyui.css')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/icon.css')
+
+	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
+	//script(type='text/javascript', src='/public/js/async/async.js')
+
+
+
+
+body(style="background-image: url('/public/images/ui/background_crack.jpg')")
+	script.
+		var getUserId =function(){return '#{userId}';}
+		var getDeviceId = function(){return '#{deviceId}';}
+		var getURL = function(){return '#{URL}';}
+		var getDefaultUserImageUrl = function(){return '#{defaultUserImageUrl}';}
+		var getDefaultMemberImageUrl = function(){return '#{defaultMemberImageUrl}';}
+
+
+
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- H T M L ----------------------------------------------------------
+	//==========================================================================
+	
+	center
+		//h1 WingshootingDestinations.com
+	center
+		#slider
+		#slider2
+		
+
+			//- p p just stands for paragraph, not sure but this is what it does. Seems good for 
+			//- | multi line stuff..
+			//- 	
+			//- br
+			//- br
+			//- br
+			//- 	
+			//- 	
+			//- 	p p just stands for paragraph, not sure but this is what it does. Seems good for 
+			//- 	| multi line stuff.. Notice this one is not centered. This is because I did not indent 
+			//- 	br
+			//- 	| under the center div(red word 'center'). Each additional line starts with | (shift-\) 
+			//- 	br
+			//- 	| and br means line break, forces the a empty line or widgets to be on different lines.
+			//- 	
+			//- 	br
+			//- 	br
+			//- 	br
+			//- 	
+			//- 	button(id="bt_click") click me
+			//- 	button(id="bt_click2" onclick="testFunction2()") click me2
+
+
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- javascript section -----------------------------------------------
+	//==========================================================================
+
+script.
+	//inside the {} will execute after page is loaded. this is
+	//needed so that all the html elements are loaded first...
+	$(document).ready(function(){
+		// calling testfunction here when page is loaded completely!!
+		testFunction();
+
+		//- $.get( "/slider", function(data){
+		//- 	$('#slider').html(data);
+		//- });
+
+		setTimeout(function(){ 
+			$.get( "/slider2", function(data){
+				$('#slider2').html(data);
+			});
+		}, 3000);
+
+
+		
+
+	});
+
+
+	var testFunction = function(){
+		console.log('testFunction executed.....');
+	}
+
+	var testFunction2 = function(){
+		console.log('testFunction2 executed.....');
+	}
