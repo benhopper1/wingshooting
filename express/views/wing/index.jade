@@ -16,6 +16,9 @@ head
 	link(rel='stylesheet', href='/public/js/easyui/themes/default/easyui.css')
 	link(rel='stylesheet', href='/public/js/easyui/themes/default/icon.css')
 
+	link(rel="stylesheet" href="/public/js/skeleton/css/normalize.css")
+	link(rel="stylesheet" href="/public/js/skeleton/css/skeleton.css")
+
 	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
 	//script(type='text/javascript', src='/public/js/async/async.js')
 
@@ -43,11 +46,23 @@ body(style="background-image: url('/public/images/ui/background_crack.jpg')")
 	//------- H T M L ----------------------------------------------------------
 	//==========================================================================
 	
-	center
+	//center(style="top:0")
 		//h1 WingshootingDestinations.com
-	center
-		#slider
-		#slider2
+	div(class="container")
+		//- div(class="row")
+		//- 	div(class="one column") One
+		//- 	div(class="eleven columns") Eleven
+
+		div(class="row")
+			center
+				div(class="twelve columns")
+					img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
+
+		div(class="row")
+
+			center
+				#slider
+				#slider2
 		
 
 			//- p p just stands for paragraph, not sure but this is what it does. Seems good for 
@@ -96,8 +111,8 @@ script.
 		//- });
 
 		setTimeout(function(){ 
-			$.get( "/slider2", function(data){
-				$('#slider2').html(data);
+			$.get( "/slider", function(data){
+				$('#slider').html(data);
 			});
 		}, 3000);
 
