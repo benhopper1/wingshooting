@@ -21,14 +21,13 @@ head
 
 	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
 	//script(type='text/javascript', src='/public/js/async/async.js')
-
+	script(type="text/javascript" src="/public/js/sidepanel/js/jquery.slidepanel.js")
+	link(rel="stylesheet" type="text/css" href="/public/js/sidepanel/css/jquery.slidepanel.css")
 
 
 
 body(style="background-image: url('/public/images/ui/background_crack.jpg')")
 	script.
-		var getUserId =function(){return '#{userId}';}
-		var getDeviceId = function(){return '#{deviceId}';}
 		var getURL = function(){return '#{URL}';}
 		var getDefaultUserImageUrl = function(){return '#{defaultUserImageUrl}';}
 		var getDefaultMemberImageUrl = function(){return '#{defaultMemberImageUrl}';}
@@ -46,12 +45,16 @@ body(style="background-image: url('/public/images/ui/background_crack.jpg')")
 	//------- H T M L ----------------------------------------------------------
 	//==========================================================================
 	
+
+	a(href="http://www.walnutcracker.net" data-slidepanel="panel") Show Panel
+
 	//center(style="top:0")
 		//h1 WingshootingDestinations.com
+	//h1 ff5
 	div(class="container")
-		//- div(class="row")
-		//- 	div(class="one column") One
-		//- 	div(class="eleven columns") Eleven
+		div(class="row")
+			//div(class="one column") One
+			//div(class="eleven columns") Eleven
 
 		div(class="row")
 			center
@@ -63,31 +66,6 @@ body(style="background-image: url('/public/images/ui/background_crack.jpg')")
 			center
 				#slider
 				#slider2
-		
-
-			//- p p just stands for paragraph, not sure but this is what it does. Seems good for 
-			//- | multi line stuff..
-			//- 	
-			//- br
-			//- br
-			//- br
-			//- 	
-			//- 	
-			//- 	p p just stands for paragraph, not sure but this is what it does. Seems good for 
-			//- 	| multi line stuff.. Notice this one is not centered. This is because I did not indent 
-			//- 	br
-			//- 	| under the center div(red word 'center'). Each additional line starts with | (shift-\) 
-			//- 	br
-			//- 	| and br means line break, forces the a empty line or widgets to be on different lines.
-			//- 	
-			//- 	br
-			//- 	br
-			//- 	br
-			//- 	
-			//- 	button(id="bt_click") click me
-			//- 	button(id="bt_click2" onclick="testFunction2()") click me2
-
-
 
 
 
@@ -114,9 +92,13 @@ script.
 			$.get( "/slider", function(data){
 				$('#slider').html(data);
 			});
-		}, 3000);
+		}, 1000);
 
-
+		$('[data-slidepanel]').slidepanel({
+			orientation: 'right',
+			mode: 'overlay',
+			static:false
+		});
 		
 
 	});
