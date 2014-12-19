@@ -1,0 +1,194 @@
+head 
+	meta(charset="UTF-8")
+	meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+
+
+	script(type='text/javascript', src='/public/js/jquery/jquery-2.0.3.min.js')
+	
+
+	script(type='text/javascript', src='/public/js/commmanager/commmanager.js')
+	script(type='text/javascript', src='/public/js/clientutil/clientutil.js')
+
+
+	script(type='text/javascript', src='/public/js/easyui/jquery.easyui.min.js')
+	//script(type='text/javascript', src='/public/js/easyui/hopper/easyui.extention.js')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/easyui.css')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/icon.css')
+
+	link(rel="stylesheet" href="/public/js/skeleton/css/normalize.css")
+	link(rel="stylesheet" href="/public/js/skeleton/css/skeleton.css")
+
+	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
+	//script(type='text/javascript', src='/public/js/async/async.js')
+	script(type="text/javascript" src="/public/js/sidepanel/js/jquery.slidepanel.js")
+	link(rel="stylesheet" type="text/css" href="/public/js/sidepanel/css/jquery.slidepanel.css")
+
+
+	//sideR
+	script(type="text/javascript" src="/public/js/sidebar/sidr/jquery.sidr.min.js")
+	link(rel="stylesheet" type="text/css" href="/public/js/sidebar/sidr/stylesheets/jquery.sidr.light.css")
+
+
+
+
+
+
+
+body(style="background-image: url('/public/images/ui/background_crack.jpg')")
+	script.
+		var getURL = function(){return '#{URL}';}
+		var getDefaultUserImageUrl = function(){return '#{defaultUserImageUrl}';}
+		var getDefaultMemberImageUrl = function(){return '#{defaultMemberImageUrl}';}
+
+
+
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- H T M L ----------------------------------------------------------
+	//==========================================================================
+	
+
+	//a(href="http://www.walnutcracker.net" data-slidepanel="panel") Show Panel
+
+	//center(style="top:0")
+		//h1 WingshootingDestinations.com
+	//h1 ff5
+
+	style.
+		#navigation {
+			display: none;
+		}
+		@media only screen and (max-width: 33%){
+			#mobile-header {
+			display: block;
+			}
+		}
+
+	div(id="mobile-header")
+		a(id="responsive-menu-button" href="#sidr-main") Menu
+
+	//- div(id="navigation")
+	//- 	nav(class="nav")
+	//- 		ul
+	//- 			li
+
+	//- 				//a(href="#download") Download
+	//- 				a(title="wingshooting" href="http://wingshootingdestinations.com/") Home
+	//- 					//img(src="../i/p1.gif" width="32" height="14" border="0" align="middle" alt="Home")
+
+
+	//- 			li
+	//- 				a(href="#getstarted") Get started
+	//- 			li
+	//- 				a(href="#usage") Demos &amp; Usage
+	//- 			li
+	//- 				a(href="#documentation") Documentation
+	//- 			li
+	//- 				a(href="#themes") Themes
+	//- 			li
+	//- 				a(href="#support") Support
+
+
+	a(id="simple-menu" href="#sidr") Toggle menu
+
+	//#sidr-main
+
+
+	div(class="container")
+		div(class="row")
+			div(class="tree columns")
+				div(id="navigation")
+					nav(class="nav")
+						ul
+							li
+
+								//a(href="#download") Download
+								a(title="wingshooting" href="http://wingshootingdestinations.com/") Home
+									//img(src="../i/p1.gif" width="32" height="14" border="0" align="middle" alt="Home")
+
+
+							li
+								a(href="#getstarted") Get started
+							li
+								a(href="#usage") Demos &amp; Usage
+							li
+								a(href="#documentation") Documentation
+							li
+								a(href="#themes") Themes
+							li
+								a(href="#support") Support
+
+
+		div(class="row")
+			div(class="tree columns")
+				#sidr
+					h6 testing 
+
+		div(class="row")
+			center
+				div(class="twelve columns")
+					img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
+
+		div(class="row")
+
+			center
+				#slider
+				#slider2
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- javascript section -----------------------------------------------
+	//==========================================================================
+
+script.
+	//inside the {} will execute after page is loaded. this is
+	//needed so that all the html elements are loaded first...
+	$(document).ready(function(){
+		// calling testfunction here when page is loaded completely!!
+		testFunction();
+
+		//- $.get( "/slider", function(data){
+		//- 	$('#slider').html(data);
+		//- });
+
+		setTimeout(function(){ 
+			$.get( "/slider", function(data){
+				$('#slider').html(data);
+			});
+		}, 1000);
+
+		$('[data-slidepanel]').slidepanel({
+			orientation: 'right',
+			mode: 'overlay',
+			static:false
+		});
+
+		//$('#simple-menu').sidr();
+		$('#responsive-menu-button').sidr({
+			name: 'sidr-main',
+			source: '#navigation'
+		});
+		
+
+	});
+
+
+	var testFunction = function(){
+		console.log('testFunction executed.....');
+	}
+
+	var testFunction2 = function(){
+		console.log('testFunction2 executed.....');
+	}

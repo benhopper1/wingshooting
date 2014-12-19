@@ -4,52 +4,13 @@ head
 	title(Banner Rotator Demo - Jssor Slider, Carousel, Slideshow with Javascript Source Code)
 
 body(style="background:#fff;")
-	style.
-		.captionOrange, .captionBlack{
-			color: #fff;
-			font-size: 20px;
-			line-height: 30px;
-			text-align: center;
-			border-radius: 4px;
-		}
-		.captionOrange{
-			background: #EB5100;
-			background-color: rgba(235, 81, 0, 0.6);
-		}
-		.captionBlack{
-			font-size:16px;
-			background: #000;
-			background-color: rgba(0, 0, 0, 0.4);
-		}
-		a.captionOrange, A.captionOrange:active, A.captionOrange:visited{
-			color: #ffffff;
-			text-decoration: none;
-		}
-		a.captionOrange:hover{
-			color: #eb5100;
-			text-decoration: underline;
-			background-color: #eeeeee;
-			background-color: rgba(238, 238, 238, 0.7);
-		}
-		.bricon{
-			background: url(/public/js/slider/img/browser-icons.png);
-		}
-	
 	//script(type='text/javascript', src='/js/jquery/jquery-2.0.3.min.js')
-	script(type="text/javascript" src="/public/js/slider/js/jquery-1.9.1.min.js")
-	//use jssor.slider.mini.js (40KB) instead for release
-	//jssor.slider.mini.js = (jssor.js + jssor.slider.js)
-	script(type="text/javascript" src="/public/js/slider/js/jssor.js")
-	script(type="text/javascript" src="/public/js/slider/js/jssor.slider.js")
-
-	
+	script(type="text/javascript" src="/public/js/slider/js/jssor.slider.mini.js")
+	link(rel="stylesheet" href="/public/js/slider/css/slider.css")
 
 
 	script.
-		console.log('testa0');
-		console.log('sliderDivs');
-		//console.log('0:' + !{sliderDivs[0]});
-		jQuery(document).ready(function ($) {
+		jQuery(document).ready(function($){
 			console.log('loaded');
 			//Reference http://www.jssor.com/development/slider-with-slideshow-jquery.html
 			//Reference http://www.jssor.com/development/tool-slideshow-transition-viewer.html
@@ -129,10 +90,9 @@ body(style="background:#fff;")
 						$ChanceToShow: 2                                //[Required] 0 Never, 1 Mouse Over, 2 Always
 					}
 				};
-			console.log('test0');
+
 			var jssor_slider2 = new $JssorSlider$("slider2_container_0", options);
-			console.log('test1');
-			console.dir(jssor_slider2);
+
 
 			//responsive code begin
 			//you can remove responsive code if you don't want the slider scales while window resizes
@@ -152,52 +112,6 @@ body(style="background:#fff;")
 
 			//responsive code end
 		});
-
-
-
-
-
-	//- style.
-	//- 	#forkongithub a{
-	//- 		background:#000;
-	//- 		color:#fff;
-	//- 		text-decoration:none;
-	//- 		font-family:arial,sans-serif;
-	//- 		text-align:center;
-	//- 		font-weight:bold;
-	//- 		padding:5px 40px;
-	//- 		font-size:1rem;
-	//- 		line-height:2rem;
-	//- 		position:relative;
-	//- 		transition:0.5s;
-	//- 	}
-	//- 	#forkongithub a:hover{
-	//- 		background:#c11;color:#fff;
-	//- 	}
-	//- 	#forkongithub a::before,#forkongithub a::after{
-	//- 		content:"";
-	//- 		width:100%;
-	//- 		display:block;
-	//- 		position:absolute;
-	//- 		top:1px;
-	//- 		left:0;
-	//- 		height:1px;
-	//- 		background:#fff;
-	//- 	}
-	//- 	#forkongithub a::after{
-	//- 		bottom:1px;
-	//- 		top:auto;
-	//- 	}
-	//- 	@media screen and (min-width:800px){
-	//- 		#forkongithub{
-	//- 			position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;
-	//- 		}
-	//- 		#forkongithub a{
-	//- 			width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);
-	//- 		}
-	//- 	}
-
-
 
 
 	//==============================================================================================
@@ -229,21 +143,21 @@ body(style="background:#fff;")
 
 	//-- Bullet Navigator Skin Begin -->
 	//-- jssor slider bullet navigator skin 01 -->
-	style.
+	//- style.
 
-		//- .jssorb01 div           (normal)
-		//- .jssorb01 div:hover     (normal mouseover)
-		//- .jssorb01 .av           (active)
-		//- .jssorb01 .av:hover     (active mouseover)
-		//- .jssorb01 .dn           (mousedown)
+	//- 	//- .jssorb01 div           (normal)
+	//- 	//- .jssorb01 div:hover     (normal mouseover)
+	//- 	//- .jssorb01 .av           (active)
+	//- 	//- .jssorb01 .av:hover     (active mouseover)
+	//- 	//- .jssorb01 .dn           (mousedown)
 
-		.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av{
-			filter: alpha(opacity=70);opacity: .7;overflow:hidden;cursor: pointer;border: #000 1px solid;
-		}
-		.jssorb01 div { background-color: gray; }
-		.jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
-		.jssorb01 .av { background-color: #fff; }
-		.jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+	//- 	.jssorb01 div, .jssorb01 div:hover, .jssorb01 .av{
+	//- 		filter: alpha(opacity=70);opacity: .7;overflow:hidden;cursor: pointer;border: #000 1px solid;
+	//- 	}
+	//- 	.jssorb01 div { background-color: gray; }
+	//- 	.jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+	//- 	.jssorb01 .av { background-color: #fff; }
+	//- 	.jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
 
 	//-bullet navigator container
 	div(u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 10px;")
@@ -252,23 +166,23 @@ body(style="background:#fff;")
 	//-Bullet Navigator Skin End 
 	//-Arrow Navigator Skin Begin 
 
-	style.
-		//-jssor slider arrow navigator skin 05 css 
-		//- .jssora05l              (normal)
-		//- .jssora05r              (normal)
-		//- .jssora05l:hover        (normal mouseover)
-		//- .jssora05r:hover        (normal mouseover)
-		//- .jssora05ldn            (mousedown)
-		//- .jssora05rdn            (mousedown)
-		.jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn{
-			position: absolute;cursor: pointer;display: block;background: url(/public/js/slider/img/a17.png) no-repeat;overflow:hidden;
-		}
-		.jssora05l { background-position: -10px -40px; }
-		.jssora05r { background-position: -70px -40px; }
-		.jssora05l:hover { background-position: -130px -40px; }
-		.jssora05r:hover { background-position: -190px -40px; }
-		.jssora05ldn { background-position: -250px -40px; }
-		.jssora05rdn { background-position: -310px -40px; }
+	//- style.
+	//- 	//-jssor slider arrow navigator skin 05 css 
+	//- 	//- .jssora05l              (normal)
+	//- 	//- .jssora05r              (normal)
+	//- 	//- .jssora05l:hover        (normal mouseover)
+	//- 	//- .jssora05r:hover        (normal mouseover)
+	//- 	//- .jssora05ldn            (mousedown)
+	//- 	//- .jssora05rdn            (mousedown)
+	//- 	.jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn{
+	//- 		position: absolute;cursor: pointer;display: block;background: url(/public/js/slider/img/a17.png) no-repeat;overflow:hidden;
+	//- 	}
+	//- 	.jssora05l { background-position: -10px -40px; }
+	//- 	.jssora05r { background-position: -70px -40px; }
+	//- 	.jssora05l:hover { background-position: -130px -40px; }
+	//- 	.jssora05r:hover { background-position: -190px -40px; }
+	//- 	.jssora05ldn { background-position: -250px -40px; }
+	//- 	.jssora05rdn { background-position: -310px -40px; }
 
 
 	//-Arrow Left

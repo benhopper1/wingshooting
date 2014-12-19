@@ -1,7 +1,7 @@
 head 
 	meta(charset="UTF-8")
-	meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
-
+	//meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
 
 	script(type='text/javascript', src='/public/js/jquery/jquery-2.0.3.min.js')
@@ -21,8 +21,32 @@ head
 
 	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
 	//script(type='text/javascript', src='/public/js/async/async.js')
-	script(type="text/javascript" src="/public/js/sidepanel/js/jquery.slidepanel.js")
-	link(rel="stylesheet" type="text/css" href="/public/js/sidepanel/css/jquery.slidepanel.css")
+	//script(type="text/javascript" src="/public/js/sidepanel/js/jquery.slidepanel.js")
+	//link(rel="stylesheet" type="text/css" href="/public/js/sidepanel/css/jquery.slidepanel.css")
+
+
+	//sideR
+	//script(type="text/javascript" src="/public/js/sidebar/sidr/jquery.sidr.min.js")
+	//link(rel="stylesheet" type="text/css" href="/public/js/sidebar/sidr/stylesheets/jquery.sidr.light.css")
+	//sideMenu
+
+	//link(rel="stylesheet" type="text/css" href="/public/js/sidebar/sidemenu/css/side-menu.css")
+	//link(rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css")
+	//script(type="text/javascript" src="/public/js/sidebar/sidemenu/js/ui.js")
+
+	
+
+	//licens for the icons:(link back, maybe about) http://creativecommons.org/licenses/by-sa/3.0/
+	link(rel="stylesheet" type="text/css" href="/public/js/perspective/PerspectivePageViewNavigation/css/normalize.css")
+	link(rel="stylesheet" type="text/css" href="/public/js/perspective/PerspectivePageViewNavigation/css/demo.css")
+	link(rel="stylesheet" type="text/css" href="/public/js/perspective/PerspectivePageViewNavigation/css/component.css")
+	script(type="text/javascript" src="/public/js/perspective/PerspectivePageViewNavigation/js/modernizr.custom.25376.js")
+	
+	
+
+
+
+
 
 
 
@@ -45,27 +69,56 @@ body(style="background-image: url('/public/images/ui/background_crack.jpg')")
 	//------- H T M L ----------------------------------------------------------
 	//==========================================================================
 	
+	div(id="perspective" class="perspective effect-airbnb")
+		div(class="container")
+			div(class="wrapper")
+				header(class="codrops-header")
+						h1 Wing Shooting Destinations
+						img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
+						#slider
+					div(class="main clearfix")
+						div(class="column")
+							button(id="showMenu") Show Menu
+				
+				//#slider2
 
-	//a(href="http://www.walnutcracker.net" data-slidepanel="panel") Show Panel
+		nav(class="outer-nav left vertical")
+			a(href="#" class="icon-home") Home
+			a(href="#" class="icon-news") Contact Us
+			a(href="#" class="icon-image") Destinations
+			a(href="#" class="icon-news") Discounted Hunts
+			a(href="#" class="icon-image") Image Gallery
+			a(href="#" class="icon-news") Advertising
+			a(href="#" class="icon-news") Contact Us
+			a(href="#" class="icon-upload") Links
+		
 
-	//center(style="top:0")
-		//h1 WingshootingDestinations.com
-	//h1 ff5
-	div(class="container")
-		div(class="row")
-			//div(class="one column") One
-			//div(class="eleven columns") Eleven
+	
 
-		div(class="row")
-			center
-				div(class="twelve columns")
-					img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
 
-		div(class="row")
 
-			center
-				#slider
-				#slider2
+	//#sidr-main
+
+
+	//- div(class="container")
+	//- 	div(class="row")
+	//- 		div(class="tree columns")
+				
+
+	//- 	div(class="row")
+	//- 		div(class="tree columns")
+
+
+	//- 	div(class="row")
+	//- 		center
+	//- 			div(class="twelve columns")
+	//- 				img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
+
+	//- 	div(class="row")
+
+	//- 		center
+	//- 			#slider
+	//- 			#slider2
 
 
 
@@ -88,17 +141,44 @@ script.
 		//- 	$('#slider').html(data);
 		//- });
 
-		setTimeout(function(){ 
-			$.get( "/slider", function(data){
-				$('#slider').html(data);
-			});
-		}, 1000);
+		//- setTimeout(function(){ 
+		//- 	$.get( "/slider", function(data){
+		//- 		$('#slider').html(data);
+		//- 	});
+		//- }, 1000);
+		setTimeout(function(){
+			$('#showMenu').trigger('click');
+		}, 8000);
 
-		$('[data-slidepanel]').slidepanel({
-			orientation: 'right',
-			mode: 'overlay',
-			static:false
-		});
+		$postAjax(
+			{
+				url:'/slider',
+				send:
+					{	sliderDivs:
+						[
+							//'<div><a u=image href="#"><img src="/public/images/ads/main_000.png"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/images/ads/main_002.png"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/01.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/images/ads/main_002.png"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/02.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/03.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/04.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/05.jpg"></img></a></div>',
+							//'<div><a u=image href="#"><img src="/public/images/ads/main_000.png"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/06.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/07.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/08.jpg"></img></a></div>',
+							'<div><a u=image href="#"><img src="/public/js/slider/img/landscape/10.jpg"></img></a></div>'
+						]
+					},
+				onAjaxSuccess:function(inResponseText){
+					console.log("ajax back with slider html :)");
+					$('#slider').html(inResponseText);
+				}
+			}
+		);
+
+		
 		
 
 	});
@@ -111,3 +191,7 @@ script.
 	var testFunction2 = function(){
 		console.log('testFunction2 executed.....');
 	}
+
+script(type="text/javascript" src="/public/js/perspective/PerspectivePageViewNavigation/js/classie.js")
+script(type="text/javascript" src="/public/js/perspective/PerspectivePageViewNavigation/js/menu.js")
+

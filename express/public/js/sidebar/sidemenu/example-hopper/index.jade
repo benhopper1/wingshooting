@@ -1,0 +1,150 @@
+head 
+	meta(charset="UTF-8")
+	//meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+
+	script(type='text/javascript', src='/public/js/jquery/jquery-2.0.3.min.js')
+	
+
+	script(type='text/javascript', src='/public/js/commmanager/commmanager.js')
+	script(type='text/javascript', src='/public/js/clientutil/clientutil.js')
+
+
+	script(type='text/javascript', src='/public/js/easyui/jquery.easyui.min.js')
+	//script(type='text/javascript', src='/public/js/easyui/hopper/easyui.extention.js')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/easyui.css')
+	link(rel='stylesheet', href='/public/js/easyui/themes/default/icon.css')
+
+	link(rel="stylesheet" href="/public/js/skeleton/css/normalize.css")
+	link(rel="stylesheet" href="/public/js/skeleton/css/skeleton.css")
+
+	//script(type='text/javascript', src='/public/js/hashofarray/hashofarrayobject.js')
+	//script(type='text/javascript', src='/public/js/async/async.js')
+	script(type="text/javascript" src="/public/js/sidepanel/js/jquery.slidepanel.js")
+	link(rel="stylesheet" type="text/css" href="/public/js/sidepanel/css/jquery.slidepanel.css")
+
+
+	//sideR
+	//script(type="text/javascript" src="/public/js/sidebar/sidr/jquery.sidr.min.js")
+	//link(rel="stylesheet" type="text/css" href="/public/js/sidebar/sidr/stylesheets/jquery.sidr.light.css")
+	//sideMenu
+
+	link(rel="stylesheet" type="text/css" href="/public/js/sidebar/sidemenu/css/side-menu.css")
+	link(rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css")
+
+
+
+
+body(style="background-image: url('/public/images/ui/background_crack.jpg')")
+	script.
+		var getURL = function(){return '#{URL}';}
+		var getDefaultUserImageUrl = function(){return '#{defaultUserImageUrl}';}
+		var getDefaultMemberImageUrl = function(){return '#{defaultMemberImageUrl}';}
+
+
+
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- H T M L ----------------------------------------------------------
+	//==========================================================================
+	
+
+	div(id="layout")
+		// Menu toggle 
+		a(href="#menu" id="menuLink" class="menu-link")
+			// Hamburger icon 
+			span
+
+
+		div(id="menu")
+			div(class="pure-menu pure-menu-open")
+				a(class="pure-menu-heading" href="#") Company
+
+				ul
+					li
+						a(href="#") Home
+					li
+						a(href="#") About
+
+					li(class="menu-item-divided pure-menu-selected")
+						a(href="#") Services
+
+					li
+						a(href="#") Contact
+
+
+
+	//#sidr-main
+
+
+	div(class="container")
+		div(class="row")
+			div(class="tree columns")
+				
+
+		div(class="row")
+			div(class="tree columns")
+
+
+		div(class="row")
+			center
+				div(class="twelve columns")
+					img(style="width:100%;" src="/public/images/wings/main/mainheader.jpg")
+
+		div(class="row")
+
+			center
+				#slider
+				#slider2
+
+
+
+
+
+
+
+	//==========================================================================
+	//------- javascript section -----------------------------------------------
+	//==========================================================================
+
+script.
+	//inside the {} will execute after page is loaded. this is
+	//needed so that all the html elements are loaded first...
+	$(document).ready(function(){
+		// calling testfunction here when page is loaded completely!!
+		testFunction();
+
+		//- $.get( "/slider", function(data){
+		//- 	$('#slider').html(data);
+		//- });
+
+		setTimeout(function(){ 
+			$.get( "/slider", function(data){
+				$('#slider').html(data);
+			});
+		}, 1000);
+
+		
+
+		
+		
+
+	});
+
+
+	var testFunction = function(){
+		console.log('testFunction executed.....');
+	}
+
+	var testFunction2 = function(){
+		console.log('testFunction2 executed.....');
+	}
+
+script(type="text/javascript" src="/public/js/sidebar/sidemenu/js/ui.js")
